@@ -73,7 +73,7 @@ public abstract class KickMaterialBaseActivity extends BaseAppCompatActivity imp
 
     @Override
     protected void injectViewsAndSetUpToolbar(@IdRes int toolbarLayoutId, @IdRes int toolbarTitleId) {
-        injectViewsAndSetUpToolbar(R.id.toolbar, R.id.toolbar_title_tv);
+        super.injectViewsAndSetUpToolbar(R.id.toolbar, R.id.toolbar_title_tv);
         ViewCompat.setElevation(this.toolbar, ViewUtils.convertDpToPixel(4.0F, this));
     }
 

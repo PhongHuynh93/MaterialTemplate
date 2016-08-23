@@ -3,6 +3,7 @@ package dhbk.android.materialtemplate.activities.activities;
 import android.os.Bundle;
 
 import dhbk.android.materialtemplate.R;
+import dhbk.android.materialtemplate.activities.fragments.ProjectsListFragment;
 
 public class MainActivity extends KickMaterialBaseActivity {
 
