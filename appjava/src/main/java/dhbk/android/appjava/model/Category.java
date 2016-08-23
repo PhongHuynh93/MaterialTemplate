@@ -1,6 +1,9 @@
 package dhbk.android.appjava.model;
 
 import android.graphics.Color;
+import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
+
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
@@ -8,8 +11,6 @@ import android.support.annotation.StringRes;
 
 import com.byoutline.kickmaterial.utils.ColorMixer;
 
-import org.parceler.Parcel;
-import org.parceler.ParcelConstructor;
 
 /**
  * @author Pawel Karczewski <pawel.karczewski at byoutline.com> on 2015-03-24
