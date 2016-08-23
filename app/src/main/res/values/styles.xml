@@ -1,18 +1,43 @@
 <resources>
-
-    <!-- Base application theme. -->
-    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
-        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
-        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
-        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-        <!--<item name="colorAccent">@color/colorAccent</item>-->
-    <!--</style>-->
-
-    <!-- Base application theme. -->
+    <!-- fixme Base application theme. -->
     <style name="AppTheme" parent="AppTheme.BaseTranslucentStatus">
     </style>
 
     <style name="AppTheme.BaseTranslucentStatus" parent="AppTheme.Base">
     </style>
 
+    <!--see https://developer.android.com/reference/android/support/v7/appcompat/R.attr.html-->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--no toolbar-->
+        <item name="windowActionBar">false</item>
+        <!--Flag indicating whether this window's Action Bar should overlay application content.-->
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>
+        <!--color palette
+        http://stackoverflow.com/questions/26714864/how-to-change-the-color-of-a-switchcompat-->
+        <item name="colorPrimary">@color/green_primary</item>
+        <item name="colorPrimaryDark">@color/status_bar_color</item>
+        <item name="colorAccent">@android:color/holo_red_dark</item>
+        <item name="colorControlHighlight">@color/green_dark_50</item>
+        <item name="colorControlNormal">@color/ab_text_color</item>
+        <item name="colorControlActivated">@color/green_primary</item>
+
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:actionMenuTextColor">#999999</item>
+        <!--Color for text that appears within action menu items.-->
+        <item name="actionMenuTextColor">#999999</item>
+        <!--fixme - bg for app, đăt tại đây để ta ko cần overdraw lại trong layout của từng activity-->
+        <item name="android:windowBackground">@color/main_bg</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <!--Whether bars should rotate or not during transition-->
+        <item name="spinBars">true</item>
+    </style>
+
+    <style name="TitleTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:color">@color/ab_text_color</item>
+        <item name="android:textColor">@color/ab_text_color</item>
+    </style>
 </resources>
