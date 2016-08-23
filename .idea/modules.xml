@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MaterialTemplate.iml" filepath="$PROJECT_DIR$/MaterialTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appjava/appjava.iml" filepath="$PROJECT_DIR$/appjava/appjava.iml" />
     </modules>
   </component>
 </project>
