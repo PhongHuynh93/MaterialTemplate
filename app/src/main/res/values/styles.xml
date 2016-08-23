@@ -34,4 +34,10 @@
         <!--Whether bars should rotate or not during transition-->
         <item name="spinBars">true</item>
     </style>
+
+    <style name="TitleTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:color">@color/ab_text_color</item>
+        <item name="android:textColor">@color/ab_text_color</item>
+    </style>
 </resources>
