@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import dhbk.android.materialtemplate.BuildConfig;
+import dhbk.android.materialtemplate.R;
 
 /**
  * Created by huynhducthanhphong on 8/23/16.
