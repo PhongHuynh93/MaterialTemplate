@@ -1,6 +1,8 @@
 package dhbk.android.materialtemplate.activities.activities;
 
+import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.view.animation.DecelerateInterpolator;
 import com.byoutline.secretsauce.activities.BaseAppCompatActivity;
 import com.byoutline.secretsauce.fragments.MenuOption;
 import com.byoutline.secretsauce.fragments.NavigationDrawerFragment;
+import com.byoutline.secretsauce.utils.ViewUtils;
 
 import dhbk.android.materialtemplate.R;
 import dhbk.android.materialtemplate.activities.fragments.KickMaterialFragment;
@@ -64,7 +67,14 @@ public abstract class KickMaterialBaseActivity extends BaseAppCompatActivity imp
 
     @Override
     public Class<? extends Fragment> onNavigationDrawerItemSelected(MenuOption position) {
+        // Currently there is no drawer
         return null;
+    }
+
+    @Override
+    protected void injectViewsAndSetUpToolbar(@IdRes int toolbarLayoutId, @IdRes int toolbarTitleId) {
+        injectViewsAndSetUpToolbar(R.id.toolbar, R.id.toolbar_title_tv);
+        ViewCompat.setElevation(this.toolbar, ViewUtils.convertDpToPixel(4.0F, this));
     }
 
     /**

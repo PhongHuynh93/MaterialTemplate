@@ -10,6 +10,14 @@ public class MainActivity extends KickMaterialBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        injectViewsAndSetUpToolbar();
+//        setUpDrawer(true);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, ProjectsListFragment.newInstance(DataManager.getCategoryAll()))
+                    .commit();
+        }
     }
 
     /**
