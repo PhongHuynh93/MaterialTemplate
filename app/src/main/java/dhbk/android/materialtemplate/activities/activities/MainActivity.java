@@ -12,4 +12,6 @@ public class MainActivity extends KickMaterialBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+
 }

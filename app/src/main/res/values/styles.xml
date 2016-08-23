@@ -6,6 +6,7 @@
     <style name="AppTheme.BaseTranslucentStatus" parent="AppTheme.Base">
     </style>
 
+    <!--see https://developer.android.com/reference/android/support/v7/appcompat/R.attr.html-->
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <!--no toolbar-->
         <item name="windowActionBar">false</item>
