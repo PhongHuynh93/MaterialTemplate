@@ -13,6 +13,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import dhbk.android.materialtemplate.BuildConfig;
 
 /**
@@ -23,7 +26,8 @@ import dhbk.android.materialtemplate.BuildConfig;
  */
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class SharedElementTransition extends Transition{
-    private SharedElementTransition fabTransition;
+    private final String[] transitionProperties;
+    private CircleTransition fabTransition;
     private ChangeBounds defaultTransition;
     private ChangeImageTransform imageTransition;
     private String fabTransitionName;
@@ -79,5 +83,13 @@ public class SharedElementTransition extends Transition{
     private boolean isFabTransition(TransitionValues transitionValues) {
         View view = transitionValues.view;
         return fabTransitionName.equals(view.getTransitionName());
+    }
+
+    private String[] initTransProps() {
+        ArrayList<String> transProps = new ArrayList<>();
+        transProps.addAll(Arrays.asList(fabTransition.getTransitionProperties()));
+        transProps.addAll(Arrays.asList(imageTransition.getTransitionProperties()));
+        transProps.addAll(Arrays.asList(defaultTransition.getTransitionProperties()));
+        return transProps.toArray(new String[transProps.size()]);
     }
 }
