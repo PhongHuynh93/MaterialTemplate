@@ -7,6 +7,7 @@ import com.byoutline.secretsauce.BaseApp;
 import com.byoutline.secretsauce.utils.ViewUtils;
 
 import dhbk.android.materialtemplate.BuildConfig;
+import dhbk.android.materialtemplate.activities.dagger.AppComponent;
 import timber.log.Timber;
 
 /**
@@ -27,6 +28,12 @@ public class KickMaterialApp extends BaseApp {
         AndroidStubServer.start(this, NetworkType.UMTS);
         RetrofitHelper.MSG_DISPLAYER = msg -> ViewUtils.showToast(msg, true);
         resetComponents();
+    }
+
+    public void resetComponents() {
+        AppComponent appComponent = createAppComponent();
+        GlobalComponent mainComponent = createGlobalComponent(appComponent.getBus(), appComponent.getAccessTokenProvider());
+        setComponents(mainComponent, appComponent);
     }
 
     @Override

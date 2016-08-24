@@ -63,4 +63,8 @@ dependencies {
     compile 'com.byoutline.ottoeventcallback:anythreadbus:1.0.0'
 //    compile 'com.byoutline.mockserver:mockserver:2.0.0-SNAPSHOT'
 
+//    dagger
+    apt 'com.google.dagger:dagger-compiler:2.5'
+    compile 'com.google.dagger:dagger:2.5'
+    provided 'javax.annotation:jsr250-api:1.0'
 }
