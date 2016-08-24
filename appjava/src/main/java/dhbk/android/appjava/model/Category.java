@@ -14,6 +14,8 @@ import dhbk.android.appjava.utils.ColorMixer;
 
 /**
  * @author Pawel Karczewski <pawel.karczewski at byoutline.com> on 2015-03-24
+ *
+ * when you click the fab icon in main activity, it's will show a list of categories.
  */
 @Parcel(Parcel.Serialization.FIELD)
 public class Category {
@@ -29,6 +31,7 @@ public class Category {
     @ColorRes
     int bgColor = Color.WHITE;
 
+    // FIXME: 8/24/16 add @annotation to check the resource, add ParcelConstructor to construct the parcel to send via Intent
     @ParcelConstructor
     public Category(int categoryId, @StringRes int nameResId, @ColorRes int colorResId, @DrawableRes int drawableResId) {
         this.categoryId = categoryId;

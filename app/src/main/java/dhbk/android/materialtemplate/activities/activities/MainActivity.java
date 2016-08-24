@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import dhbk.android.materialtemplate.R;
 import dhbk.android.materialtemplate.activities.fragments.ProjectsListFragment;
+import dhbk.android.materialtemplate.activities.managers.DataManager;
 
 public class MainActivity extends KickMaterialBaseActivity {
 

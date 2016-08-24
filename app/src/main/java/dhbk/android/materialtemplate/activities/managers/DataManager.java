@@ -11,6 +11,7 @@ import dhbk.android.materialtemplate.R;
 
 public class DataManager {
 
+    // this is a list of categories, when users click one, it's will filter the content.
     public static ObservableArrayList<Category> getCategoriesList() {
         ObservableArrayList<Category> categories = new ObservableArrayList<>();
 
@@ -34,6 +35,7 @@ public class DataManager {
         return categories;
     }
 
+//    this is a title above categories list
     public static Category getCategoryAll() {
         return new Category(Category.ALL_CATEGORIES_ID, R.string.all_categories, R.color.green_primary, 0);
     }
