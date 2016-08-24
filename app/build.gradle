@@ -44,4 +44,7 @@ dependencies {
 //    fab
 //    https://github.com/shell-software/fab
     compile 'com.github.shell-software:fab:1.1.2'
+
+//    simple logcat
+    compile 'com.jakewharton.timber:timber:4.3.0'
 }
