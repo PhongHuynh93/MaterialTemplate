@@ -58,4 +58,58 @@
     </style>
     <style name="ActionButtonStyle" parent="ActionButtonStyleBase">
     </style>
+
+    <!--fixme font style-->
+    <style name="LightFontStyle">
+        <item name="customFont">Roboto_Light.ttf</item>
+    </style>
+
+    <style name="ThinFontStyle">
+        <item name="customFont">Roboto_Thin.ttf</item>
+    </style>
+
+    <style name="BoldFontStyle">
+        <item name="customFont">Roboto_Bold.ttf</item>
+    </style>
+
+    <style name="RegularFontStyle">
+        <item name="customFont">Roboto_Regular.ttf</item>
+    </style>
+
+    <!--font for text view style-->
+
+    <style name="ProjectItemNameStyle" parent="LightFontStyle">
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:paddingBottom">@dimen/project_item_small_padding</item>
+        <item name="android:layout_marginLeft">@dimen/project_item_big_padding</item>
+        <item name="android:layout_marginRight">@dimen/project_item_big_padding</item>
+        <item name="android:paddingTop">@dimen/project_item_small_padding</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--seekbar style-->
+    <style name="SeekBarStyle" parent="SeekBarStyleBase">
+    </style>
+
+    <style name="SeekBarStyleBase">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">11dp</item>
+        <item name="android:layout_marginTop">11dp</item>
+        <item name="android:maxHeight">9dp</item>
+        <item name="android:minHeight">9dp</item>
+        <item name="android:progress">50</item>
+        <item name="android:progressDrawable">@drawable/progress_drawable</item>
+        <item name="android:thumb">@android:color/transparent</item>
+        <item name="android:background">@drawable/elevation_shadow</item>
+    </style>
+
 </resources>
