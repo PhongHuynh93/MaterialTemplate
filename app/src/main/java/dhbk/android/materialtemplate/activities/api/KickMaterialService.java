@@ -3,7 +3,10 @@ package dhbk.android.materialtemplate.activities.api;
 import java.util.List;
 import java.util.Map;
 
+import dhbk.android.appjava.model.AccessToken;
 import dhbk.android.appjava.model.Category;
+import dhbk.android.appjava.model.DiscoverResponse;
+import dhbk.android.appjava.model.ProjectDetails;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
