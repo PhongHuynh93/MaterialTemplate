@@ -6,6 +6,8 @@ import android.util.AttributeSet;
 
 /**
  * Created by huynhducthanhphong on 8/23/16.
+ *
+ * fixme - change recycler view to endless recylcer with onLoadMore
  */
 public class EndlessRecyclerView extends RecyclerView {
     private static final int DEFAULT_ITEMS_THRESHOLD = 2;
@@ -34,6 +36,9 @@ public class EndlessRecyclerView extends RecyclerView {
         init();
     }
 
+    /**
+     * check to see if it can load more data
+     */
     private void init() {
         super.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

@@ -15,6 +15,7 @@
         <item name="windowActionBarOverlay">true</item>
         <!--color palette
         http://stackoverflow.com/questions/26714864/how-to-change-the-color-of-a-switchcompat-->
+        <!--fixme this is the color of bottom nav-->
         <item name="colorPrimary">@color/green_primary</item>
         <item name="colorPrimaryDark">@color/status_bar_color</item>
         <item name="colorAccent">@android:color/holo_red_dark</item>
