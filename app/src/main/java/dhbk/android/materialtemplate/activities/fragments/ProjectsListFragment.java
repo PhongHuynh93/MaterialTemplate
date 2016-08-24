@@ -75,6 +75,9 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
     //
     private float actionbarScrollPoint;
 
+//    adapter for list
+    private ProjectsAdapter adapter;
+
     /**
      * fixme - get the category and wrap in bundle
      *
@@ -179,8 +182,9 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
         layoutManager = new GridLayoutManager(getActivity(), 2);
 
         final boolean showHeader = sharedPreferences.getBoolean(PREFS_SHOW_HEADER, true);
-        // TODO: decide when to hide it.
         sharedPreferences.edit().putBoolean(PREFS_SHOW_HEADER, false).apply();
+
+        // FIXME: 8/24/16 set GridLayoutManager when to span image
         final ProjectsAdapter.ItemViewTypeProvider itemViewTypeProvider = new ProjectsAdapter.ItemViewTypeProvider(showHeader);
 
         layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
@@ -199,5 +203,18 @@ public class ProjectsListFragment extends KickMaterialFragment implements Projec
 
         adapter = new ProjectsAdapter(getActivity(), this, showHeader, itemViewTypeProvider);
         projectListRv.setAdapter(adapter);
+    }
+
+    /**
+     * show a different color when swipe from top to bottom
+     */
+    public void configureSwipeRefresh() {
+        int altColor = category == null ? R.color.green_dark : category.colorResId;
+        swipeRefreshLayout.setColorSchemeResources(altColor, R.color.green_primary);
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            // Throw away all loaded categories and start over.
+            int pageToRefresh = 1;
+            discoverField.refresh(DiscoverQuery.getDiscoverQuery(category, pageToRefresh));
+        });
     }
 }

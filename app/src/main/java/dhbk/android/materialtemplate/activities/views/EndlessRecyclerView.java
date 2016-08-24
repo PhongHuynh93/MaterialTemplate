@@ -90,6 +90,10 @@ public class EndlessRecyclerView extends RecyclerView {
         this.visibleItemsThreshold = visibleItemsThreshold;
     }
 
+    public void setEndlessScrollListener(EndlessScrollListener listener) {
+        endlessScrollListener = listener;
+    }
+
     public interface EndlessScrollListener {
         int getLastVisibleItemPosition();
 

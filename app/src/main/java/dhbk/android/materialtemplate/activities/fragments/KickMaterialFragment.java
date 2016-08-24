@@ -89,6 +89,11 @@ public abstract class KickMaterialFragment extends Fragment {
         }
     }
 
+    // listener for listview
+    protected void setUpListeners() {
+        //empty by default
+    }
+
     // set the tile in toolbar in activity by getting it from method
     private void setActionbar() {
         KickMaterialBaseActivity baseActivity = (KickMaterialBaseActivity) getActivity();
