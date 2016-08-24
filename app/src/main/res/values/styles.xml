@@ -43,7 +43,7 @@
         <item name="android:textColor">@color/ab_text_color</item>
     </style>
 
-    <!--toolbar style-->
+    <!--fab style, anim appear and dissappear-->
     <style name="ActionButtonStyleBase">
         <item name="image_size">20dp</item>
         <item name="show_animation">@anim/fab_roll_from_down</item>

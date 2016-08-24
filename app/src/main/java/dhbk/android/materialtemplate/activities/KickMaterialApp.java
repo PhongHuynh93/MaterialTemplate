@@ -4,6 +4,7 @@ import com.byoutline.secretsauce.BaseApp;
 import com.byoutline.secretsauce.utils.ViewUtils;
 
 import dhbk.android.materialtemplate.BuildConfig;
+import timber.log.Timber;
 
 /**
  * Created by huynhducthanhphong on 8/24/16.

@@ -47,4 +47,8 @@ dependencies {
 
 //    simple logcat
     compile 'com.jakewharton.timber:timber:4.3.0'
+
+//    http server
+    compile 'com.byoutline.androidstubserver:stubserver:1.4.1'
+
 }
