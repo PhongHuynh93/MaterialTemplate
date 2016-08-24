@@ -33,6 +33,7 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
+    <!--fixme use fab library-->
     <com.software.shell.fab.ActionButton
         android:id="@+id/show_categories_fab"
         style="@style/ActionButtonStyle"

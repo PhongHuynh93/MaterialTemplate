@@ -51,4 +51,10 @@ dependencies {
 //    http server
     compile 'com.byoutline.androidstubserver:stubserver:1.4.1'
 
+//    retrofit server
+    compile 'com.byoutline.ottocachedfield:observablecachedfield:1.0.1'
+    compile 'com.byoutline.eventcallback:eventcallback-api:1.0.1'
+    compile 'com.byoutline.ottoeventcallback:anythreadbus:1.0.0'
+//    compile 'com.byoutline.mockserver:mockserver:2.0.0-SNAPSHOT'
+
 }
