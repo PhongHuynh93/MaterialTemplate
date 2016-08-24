@@ -7,6 +7,8 @@ import dhbk.android.materialtemplate.R;
 
 public class CategoriesListActivity extends AppCompatActivity {
     public static final String ARG_CATEGORY = "ARG_CATEGORY";
+    public static final int DEFAULT_REQUEST_CODE = 101;
+    public static final int RESULT_CATEGORY_SELECTED = 13;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

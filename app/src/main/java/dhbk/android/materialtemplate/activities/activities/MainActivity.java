@@ -1,7 +1,12 @@
 package dhbk.android.materialtemplate.activities.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 
+import org.parceler.Parcels;
+
+import dhbk.android.appjava.model.Category;
 import dhbk.android.materialtemplate.R;
 import dhbk.android.materialtemplate.activities.fragments.ProjectsListFragment;
 import dhbk.android.materialtemplate.activities.managers.DataManager;
@@ -24,6 +29,36 @@ public class MainActivity extends KickMaterialBaseActivity {
     }
 
     /**
+     * show a menu toolbar at the top
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    /**
+     * after choosing a item in a filter, show a fragment with that filter, change the title
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        boolean categorySelection = requestCode == CategoriesListActivity.DEFAULT_REQUEST_CODE;
+        if (categorySelection && resultCode == CategoriesListActivity.RESULT_CATEGORY_SELECTED) {
+            Category category = Parcels.unwrap(data.getParcelableExtra(CategoriesListActivity.ARG_CATEGORY));
+            // fixme - replace old frag witn new category frag by calling parent method
+            showFragment(ProjectsListFragment.newInstance(category), true);
+            // fixme - set title in toolbar again
+            setToolbarText(getString(category.nameResId));
+        }
+    }
+
+    /**
      * fixme - change alpha of a view (when we scroll, it's will opacity so we can see the content underneath)
      * @param alpha
      */
@@ -31,5 +66,7 @@ public class MainActivity extends KickMaterialBaseActivity {
     public void setToolbarAlpha(float alpha) {
         toolbar.getBackground().setAlpha((int) (alpha * 255));
     }
+
+
 
 }

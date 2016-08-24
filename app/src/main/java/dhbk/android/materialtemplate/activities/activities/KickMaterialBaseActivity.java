@@ -17,6 +17,7 @@ import dhbk.android.materialtemplate.activities.fragments.KickMaterialFragment;
 
 /**
  * Created by huynhducthanhphong on 8/23/16.
+ * inject toolbar, show or hide toolbar when scroll
  */
 public abstract class KickMaterialBaseActivity extends BaseAppCompatActivity implements KickMaterialFragment.HostActivity, NavigationDrawerFragment.NavigationDrawerCallbacks {
     private static final long HEADER_HIDE_ANIM_DURATION = 300;
