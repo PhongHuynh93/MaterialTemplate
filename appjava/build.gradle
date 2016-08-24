@@ -1,22 +1,25 @@
-apply plugin: 'com.android.application'
+//apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+//apply plugin: 'java'
+//apply plugin: 'propdeps'
 
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
 
-    defaultConfig {
-        applicationId "dhbk.android.appjava"
-        minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+//    defaultConfig {
+////        applicationId "dhbk.android.appjava"
+//        minSdkVersion 15
+//        targetSdkVersion 24
+//        versionCode 1
+//        versionName "1.0"
+//    }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
 }
 
 dependencies {

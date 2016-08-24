@@ -6,6 +6,8 @@ import android.support.v7.widget.GridLayoutManager;
 import com.byoutline.cachedfield.FieldState;
 import com.byoutline.cachedfield.FieldStateListener;
 
+import org.parceler.Parcels;
+
 import javax.annotation.Nullable;
 
 import dhbk.android.materialtemplate.activities.adapters.ProjectClickListener;
