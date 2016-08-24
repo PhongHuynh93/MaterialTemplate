@@ -1,6 +1,5 @@
 package dhbk.android.materialtemplate.activities.activities;
 
-import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.GridLayoutManager;
@@ -26,6 +25,10 @@ public abstract class KickMaterialBaseActivity extends BaseAppCompatActivity imp
     private boolean actionBarShown = true;
     private int actionBarAutoHideSignal = 0;
 
+    /**
+     * todo show or hide action bar depend on scroll
+     * @param listView
+     */
     @Override
     public void enableActionBarAutoHide(RecyclerView listView) {
         initActionBarAutoHide();
@@ -71,14 +74,18 @@ public abstract class KickMaterialBaseActivity extends BaseAppCompatActivity imp
         return null;
     }
 
-    @Override
-    protected void injectViewsAndSetUpToolbar(@IdRes int toolbarLayoutId, @IdRes int toolbarTitleId) {
-        super.injectViewsAndSetUpToolbar(R.id.toolbar, R.id.toolbar_title_tv);
+    /**
+     * fixme - auto convert dp to pixel, auto set toolbar and tile name for toolbar
+     */
+    protected void injectViewsAndSetUpToolbar() {
+        injectViewsAndSetUpToolbar(R.id.toolbar, R.id.toolbar_title_tv);
         ViewCompat.setElevation(this.toolbar, ViewUtils.convertDpToPixel(4.0F, this));
     }
 
+
     /**
      * Initializes the Action Bar auto-hide (aka Quick Recall) effect.
+     * fixme -  get pixel from dp in dimen file.
      */
     private void initActionBarAutoHide() {
         actionBarAutoHideMinY = getResources().getDimensionPixelSize(R.dimen.action_bar_auto_hide_min_y);
@@ -123,6 +130,10 @@ public abstract class KickMaterialBaseActivity extends BaseAppCompatActivity imp
         onActionBarAutoShowOrHide(show);
     }
 
+    /**
+     * fixme show or hide action bar with animation
+     * @param shown
+     */
     protected void onActionBarAutoShowOrHide(boolean shown) {
         View view = toolbar;
 

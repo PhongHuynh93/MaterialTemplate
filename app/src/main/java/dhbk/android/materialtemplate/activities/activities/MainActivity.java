@@ -12,6 +12,7 @@ public class MainActivity extends KickMaterialBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // fixme - add toolbar for this view
         injectViewsAndSetUpToolbar();
 //        setUpDrawer(true);
         if (savedInstanceState == null) {
@@ -22,7 +23,7 @@ public class MainActivity extends KickMaterialBaseActivity {
     }
 
     /**
-     * change alpha of a view
+     * fixme - change alpha of a view (when we scroll, it's will opacity so we can see the content underneath)
      * @param alpha
      */
     @Override

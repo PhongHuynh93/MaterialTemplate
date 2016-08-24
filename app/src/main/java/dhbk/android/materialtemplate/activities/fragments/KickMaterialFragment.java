@@ -13,6 +13,7 @@ import dhbk.android.materialtemplate.activities.activities.KickMaterialBaseActiv
 
 /**
  * Created by huynhducthanhphong on 8/23/16.
+ * fixme - implement interface for activity implement, imlement life cycle of fragment
  */
 public abstract class KickMaterialFragment extends Fragment {
     private static final String TAG = LogUtils.makeLogTag(KickMaterialFragment.class);
