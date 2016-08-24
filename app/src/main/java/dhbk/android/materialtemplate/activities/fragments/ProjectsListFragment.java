@@ -10,6 +10,8 @@ import org.parceler.Parcels;
 
 import javax.annotation.Nullable;
 
+import dhbk.android.appjava.model.Category;
+import dhbk.android.materialtemplate.activities.activities.CategoriesListActivity;
 import dhbk.android.materialtemplate.activities.adapters.ProjectClickListener;
 import dhbk.android.materialtemplate.activities.adapters.SharedViews;
 import dhbk.android.materialtemplate.activities.views.EndlessRecyclerView;
@@ -26,7 +28,7 @@ public class ProjectsListFragment  extends KickMaterialFragment implements Proje
     public static ProjectsListFragment newInstance(@Nullable Category category) {
         ProjectsListFragment instance = new ProjectsListFragment();
         Bundle args = new Bundle();
-        args.putParcelable(ARG_CATEGORY, Parcels.wrap(category));
+        args.putParcelable(CategoriesListActivity.ARG_CATEGORY, Parcels.wrap(category));
         instance.setArguments(args);
         return instance;
     }
