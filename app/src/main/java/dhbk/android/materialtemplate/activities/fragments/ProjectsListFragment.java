@@ -24,6 +24,7 @@ public class ProjectsListFragment  extends KickMaterialFragment implements Proje
      * Endless scroll variables *
      */
     private GridLayoutManager layoutManager;
+    private Category category;
 
     public static ProjectsListFragment newInstance(@Nullable Category category) {
         ProjectsListFragment instance = new ProjectsListFragment();
@@ -56,5 +57,18 @@ public class ProjectsListFragment  extends KickMaterialFragment implements Proje
     @Override
     public void projectClicked(int position, SharedViews views) {
 
+    }
+
+    /**
+     * get the name of the choosen category
+     * @return name of the choose category
+     */
+    @Override
+    public String getFragmentActionbarName() {
+        if (category != null) {
+            return getString(category.nameResId);
+        } else {
+            return "Projects";
+        }
     }
 }
