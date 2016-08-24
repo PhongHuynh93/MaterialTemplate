@@ -25,11 +25,19 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
 
+    // add appjava module as library
     compile project(':appjava')
+    compile project(path: ':appjava')
 
+    // base project
     compile 'com.byoutline.secretsauce:secretsauce:0.5.2'
 
+    // parceler by annotation
     compile 'org.parceler:parceler-api:1.1.5'
     apt 'org.parceler:parceler:1.1.5'
-    compile project(path: ':appjava')
+
+    // bing data, auto update listview or recyclerview if datas underneath change
+    // https://github.com/evant/binding-collection-adapter
+    compile 'me.tatarka.bindingcollectionadapter:bindingcollectionadapter:1.3.0'
+    compile 'me.tatarka.bindingcollectionadapter:bindingcollectionadapter-recyclerview:1.3.0'
 }
