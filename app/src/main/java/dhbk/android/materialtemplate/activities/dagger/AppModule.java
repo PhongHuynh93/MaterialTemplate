@@ -10,6 +10,7 @@ import com.byoutline.secretsauce.di.DefaultFontName;
 import com.byoutline.secretsauce.di.SessionId;
 import com.squareup.otto.Bus;
 
+import dagger.Module;
 import dagger.Provides;
 import dhbk.android.materialtemplate.R;
 import dhbk.android.materialtemplate.activities.managers.AccessTokenProvider;
@@ -17,6 +18,7 @@ import dhbk.android.materialtemplate.activities.managers.AccessTokenProvider;
 /**
  * Created by huynhducthanhphong on 8/24/16.
  */
+@Module
 public class AppModule {
     private final BaseApp app;
     private static final String MEDIUM_FONT_NAME = "Roboto_Medium.ttf";

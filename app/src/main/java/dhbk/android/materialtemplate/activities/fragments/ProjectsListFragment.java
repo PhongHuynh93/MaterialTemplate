@@ -14,23 +14,36 @@ import org.parceler.Parcels;
 
 import javax.annotation.Nullable;
 
+import butterknife.ButterKnife;
 import dhbk.android.appjava.model.Category;
 import dhbk.android.materialtemplate.R;
+import dhbk.android.materialtemplate.activities.KickMaterialApp;
 import dhbk.android.materialtemplate.activities.activities.CategoriesListActivity;
 import dhbk.android.materialtemplate.activities.adapters.ProjectClickListener;
 import dhbk.android.materialtemplate.activities.adapters.SharedViews;
 import dhbk.android.materialtemplate.activities.views.EndlessRecyclerView;
+import timber.log.Timber;
 
 /**
  * Created by huynhducthanhphong on 8/23/16.
  */
 public class ProjectsListFragment  extends KickMaterialFragment implements ProjectClickListener, FieldStateListener, EndlessRecyclerView.EndlessScrollListener {
-    /**
-     * Endless scroll variables *
-     */
     private GridLayoutManager layoutManager;
+
+    // the category which user has chosen
     private Category category;
+
+//    root view after inflate
     private View rootView;
+
+//     endless recyclerview
+    private EndlessRecyclerView projectListRv;
+
+    // max scroll
+    private float maxScroll;
+
+    //
+    private float actionbarScrollPoint;
 
     public static ProjectsListFragment newInstance(@Nullable Category category) {
         ProjectsListFragment instance = new ProjectsListFragment();
@@ -88,6 +101,15 @@ public class ProjectsListFragment  extends KickMaterialFragment implements Proje
             return getString(category.nameResId);
         } else {
             return "Projects";
+        }
+    }
+
+    private void getArgs() {
+        Bundle args = getArguments();
+        if (args != null && args.containsKey(CategoriesListActivity.ARG_CATEGORY)) {
+            category = Parcels.unwrap(args.getParcelable(CategoriesListActivity.ARG_CATEGORY));
+        } else {
+            Timber.e("Category not passed");
         }
     }
 }

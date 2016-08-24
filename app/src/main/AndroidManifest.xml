@@ -18,6 +18,10 @@
         </activity>
         <activity android:name=".activities.activities.CategoriesListActivity">
         </activity>
+        <activity android:name=".activities.activities.ProjectDetailsActivity">
+        </activity>
+        <activity android:name=".activities.activities.RewardsListActivity">
+        </activity>
     </application>
 
 </manifest>

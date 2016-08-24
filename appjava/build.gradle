@@ -34,5 +34,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
 
     provided 'com.google.code.findbugs:findbugs:3.0.0'
+    provided 'com.google.auto.value:auto-value:1.2'
 
 }

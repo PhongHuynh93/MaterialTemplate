@@ -6,6 +6,7 @@ import java.util.Map;
 import dhbk.android.appjava.model.AccessToken;
 import dhbk.android.appjava.model.Category;
 import dhbk.android.appjava.model.DiscoverResponse;
+import dhbk.android.appjava.model.EmailAndPass;
 import dhbk.android.appjava.model.ProjectDetails;
 import retrofit2.Call;
 import retrofit2.http.Body;

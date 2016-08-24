@@ -2,6 +2,12 @@ package dhbk.android.materialtemplate.activities.dagger;
 
 import android.content.SharedPreferences;
 
+import com.byoutline.cachedfield.CachedField;
+import com.byoutline.cachedfield.CachedFieldWithArg;
+import com.byoutline.observablecachedfield.ObservableCachedFieldWithArg;
+import com.byoutline.ottocachedfield.OttoCachedFieldBuilder;
+import com.byoutline.ottocachedfield.OttoCachedFieldWithArgBuilder;
+import com.byoutline.ottocachedfield.OttoObservableCachedFieldWithArgBuilder;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -17,11 +23,25 @@ import javax.annotation.Nullable;
 
 import dagger.Module;
 import dagger.Provides;
+import dhbk.android.appjava.model.Category;
+import dhbk.android.appjava.model.DiscoverResponse;
+import dhbk.android.appjava.model.ProjectDetails;
+import dhbk.android.appjava.model.ProjectIdAndSignature;
 import dhbk.android.materialtemplate.activities.KickMaterialApp;
+import dhbk.android.materialtemplate.activities.api.KickMaterialRequestInterceptor;
+import dhbk.android.materialtemplate.activities.api.KickMaterialService;
+import dhbk.android.materialtemplate.activities.events.CategoriesFetchedEvent;
+import dhbk.android.materialtemplate.activities.events.DiscoverProjectsFetchedErrorEvent;
+import dhbk.android.materialtemplate.activities.events.DiscoverProjectsFetchedEvent;
+import dhbk.android.materialtemplate.activities.events.ProjectDetailsFetchedEvent;
+import dhbk.android.materialtemplate.activities.events.ProjectDetailsFetchingFailedEvent;
 import dhbk.android.materialtemplate.activities.managers.AccessTokenProvider;
+import dhbk.android.materialtemplate.activities.managers.LoginManager;
+import dhbk.android.materialtemplate.activities.model.DiscoverQuery;
 import dhbk.android.materialtemplate.activities.utils.LruCacheWithPlaceholders;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.byoutline.ibuscachedfield.util.RetrofitHelper.apiValueProv;
 

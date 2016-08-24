@@ -1,19 +1,27 @@
 package dhbk.android.materialtemplate.activities;
 
+import android.support.annotation.VisibleForTesting;
+
 import com.byoutline.androidstubserver.AndroidStubServer;
 import com.byoutline.ibuscachedfield.util.RetrofitHelper;
 import com.byoutline.mockserver.NetworkType;
 import com.byoutline.secretsauce.BaseApp;
 import com.byoutline.secretsauce.utils.ViewUtils;
+import com.squareup.otto.Bus;
 
 import dhbk.android.materialtemplate.BuildConfig;
 import dhbk.android.materialtemplate.activities.dagger.AppComponent;
+import dhbk.android.materialtemplate.activities.dagger.AppModule;
+import dhbk.android.materialtemplate.activities.dagger.GlobalComponent;
+import dhbk.android.materialtemplate.activities.dagger.GlobalModule;
+import dhbk.android.materialtemplate.activities.managers.AccessTokenProvider;
 import timber.log.Timber;
 
 /**
  * Created by huynhducthanhphong on 8/24/16.
  */
 public class KickMaterialApp extends BaseApp {
+    public static GlobalComponent component;
 
     @Override
     public void onCreate() {
@@ -41,4 +49,22 @@ public class KickMaterialApp extends BaseApp {
         return BuildConfig.DEBUG;
     }
 
+    private GlobalComponent createGlobalComponent(Bus bus, AccessTokenProvider accessTokenProvider) {
+        return DaggerGlobalComponent.builder()
+                .globalModule(new GlobalModule(this, bus, accessTokenProvider))
+                .build();
+    }
+
+    private AppComponent createAppComponent() {
+        return DaggerAppComponent.builder()
+                .appModule(new AppModule(this))
+                .build();
+    }
+
+    @VisibleForTesting
+    public synchronized void setComponents(GlobalComponent mainComponent, AppComponent appComponent) {
+        component = mainComponent;
+        init(appComponent);
+//        component.inject(this);
+    }
 }
