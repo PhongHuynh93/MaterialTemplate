@@ -78,4 +78,7 @@ dependencies {
 //    https://commons.apache.org/proper/commons-collections/download_collections.cgi
     compile 'commons-collections:commons-collections:3.2.1'
 
+//    gson
+    compile 'com.google.code.gson:gson:2.7'
+
 }

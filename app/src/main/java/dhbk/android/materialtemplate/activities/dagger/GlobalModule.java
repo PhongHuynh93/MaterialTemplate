@@ -2,6 +2,10 @@ package dhbk.android.materialtemplate.activities.dagger;
 
 import android.content.SharedPreferences;
 
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializer;
 import com.squareup.otto.Bus;
 import com.squareup.picasso.Picasso;
 
